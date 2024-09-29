@@ -1,4 +1,11 @@
 public class MathUtil {
+    // Static methods
+
+    /**
+     * Checks if a number is prime.
+     * @param n The number to check.
+     * @return True if n is prime, false otherwise.
+     */
     public static boolean isPrime(int n) {
         if (n<= 1) {
             return false;
@@ -11,6 +18,12 @@ public class MathUtil {
         return true;
     }
 
+    /**
+     * Calculates the greatest common divisor (GCD) of two integers using the Euclidean algorithm.
+     * @param a First integer.
+     * @param b Second integer.
+     * @return The GCD of a and b.
+     */
     public static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;
@@ -20,9 +33,22 @@ public class MathUtil {
         return a;
     }
 
+    /**
+     * Computes the least common multiple (LCM) of two numbers.
+     * @param a First integer.
+     * @param b Second integer.
+     * @return The LCM of a and b.
+     */
+
     public static int lcm(int a, int b) {
         return (a * b) / gcd(a, b);
     }
+
+    /**
+     * Returns the nth Fibonacci number.
+     * @param n The index of the Fibonacci number.
+     * @return The nth Fibonacci number.
+     */
 
     public static int fibonacci(int n) {
         if (n <= 1) return n;
@@ -35,6 +61,12 @@ public class MathUtil {
         return b;
     }
 
+    /**
+     * Calculates the factorial of a number n.
+     * @param n The number.
+     * @return The factorial of n.
+     */
+
     public static int factorial(int n) {
         if (n == 0) return 1;
         int result = 1;
@@ -45,6 +77,12 @@ public class MathUtil {
     }
 
  /* non static methods*/
+
+    /**
+     * Checks if a number is a perfect number.
+     * @param n The number.
+     * @return True if n is a perfect number, false otherwise.
+     */
     public boolean isPerfectNumber(int n) {
         int sum = 0;
         for (int i = 1; i < n; i++) {
@@ -53,7 +91,11 @@ public class MathUtil {
         return sum == n;
     }
 
-
+    /**
+     * Computes the sum of the digits of a number.
+     * @param n The number.
+     * @return The sum of its digits.
+     */
     public int sumOfDigits(int n) {
         int sum = 0;
         while (n != 0) {
@@ -63,6 +105,11 @@ public class MathUtil {
         return sum;
     }
 
+    /**
+     * Reverses the digits of a number.
+     * @param n The number.
+     * @return The reversed number.
+     */
     public int reverseNumber(int n) {
         int reversed = 0;
         while (n != 0) {
@@ -73,6 +120,11 @@ public class MathUtil {
         return reversed;
     }
 
+    /**
+     * Checks if a number is an Armstrong number.
+     * @param n The number.
+     * @return True if n is an Armstrong number, false otherwise.
+     */
     public boolean isArmstrongNumber(int n) {
         int sum = 0, temp = n, digits = 0;
         while (temp != 0) {
@@ -88,6 +140,11 @@ public class MathUtil {
         return sum == n;
     }
 
+    /**
+     * Finds the smallest prime number greater than n.
+     * @param n The number.
+     * @return The next prime number.
+     */
     public int nextPrime(int n) {
         int next = n + 1;
         while (!isPrime(next)) {
