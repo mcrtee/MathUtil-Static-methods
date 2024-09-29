@@ -95,4 +95,22 @@ public class MathUtil {
         }
         return next;
     }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        // Static method testing
+        System.out.println("isPrime(7): " + isPrime(7));
+        System.out.println("gcd(36, 60): " + gcd(36, 60));
+        System.out.println("lcm(12, 15): " + lcm(12, 15));
+        System.out.println("fibonacci(5): " + fibonacci(5));
+        System.out.println("factorial(5): " + factorial(5));
+
+        // Non-static method testing
+        MathUtil util = new MathUtil();
+        System.out.println("isPerfectNumber(28): " + util.isPerfectNumber(28));
+        System.out.println("sumOfDigits(123): " + util.sumOfDigits(123));
+        System.out.println("reverseNumber(12345): " + util.reverseNumber(12345));
+        System.out.println("isArmstrongNumber(153): " + util.isArmstrongNumber(153));
+        System.out.println("nextPrime(10): " + util.nextPrime(10));
+    }
 }
