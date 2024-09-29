@@ -44,4 +44,55 @@ public class MathUtil {
         return result;
     }
 
+ /* non static methods*/
+    public boolean isPerfectNumber(int n) {
+        int sum = 0;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) sum += i;
+        }
+        return sum == n;
+    }
+
+
+    public int sumOfDigits(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+
+    public int reverseNumber(int n) {
+        int reversed = 0;
+        while (n != 0) {
+            int digit = n % 10;
+            reversed = reversed * 10 + digit;
+            n /= 10;
+        }
+        return reversed;
+    }
+
+    public boolean isArmstrongNumber(int n) {
+        int sum = 0, temp = n, digits = 0;
+        while (temp != 0) {
+            temp /= 10;
+            digits++;
+        }
+        temp = n;
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum += Math.pow(digit, digits);
+            temp /= 10;
+        }
+        return sum == n;
+    }
+
+    public int nextPrime(int n) {
+        int next = n + 1;
+        while (!isPrime(next)) {
+            next++;
+        }
+        return next;
+    }
 }
